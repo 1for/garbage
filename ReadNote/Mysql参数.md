@@ -1,17 +1,17 @@
-### ²é¿´Mysql·şÎñÆ÷ÅäÖÃÏî
+### æŸ¥çœ‹MysqlæœåŠ¡å™¨é…ç½®é¡¹
 `show variables;`
 
-### ²é¿´·şÎñÆ÷ÔËĞĞ×´Ì¬Ïî
+### æŸ¥çœ‹æœåŠ¡å™¨è¿è¡ŒçŠ¶æ€é¡¹
 `show global status;`
 
-### Âı²éÑ¯
+### æ…¢æŸ¥è¯¢
 
 `show variables like '%slow%';
 
-- low_slow_queries OFF ¼ÇÂ¼Âı²éÑ¯¿ª¹Ø
-- slow_launch_time 2 ´óÓÚ2ÃëµÄ²éÑ¯¼ÇÂ¼Âı²éÑ¯
+- low_slow_queries OFF è®°å½•æ…¢æŸ¥è¯¢å¼€å…³
+- slow_launch_time 2 å¤§äº2ç§’çš„æŸ¥è¯¢è®°å½•æ…¢æŸ¥è¯¢
 
 `show global status like '%slow%';
 
 - Slow_launch_threads 0
-- Slow_queries 270 Ò»¹²ÓĞ270ÌõÂı²éÑ¯¼ÇÂ¼ 
+- Slow_queries 270 ä¸€å…±æœ‰270æ¡æ…¢æŸ¥è¯¢è®°å½• 

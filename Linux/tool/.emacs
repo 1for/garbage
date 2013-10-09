@@ -1,5 +1,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
+(require 'package)
+(add-to-list 'package-archives 
+	'("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 ;;no backup files
 (setq make-backup-files nil)
 
@@ -27,7 +31,7 @@
  '(js3-square-indent-offset 2)
  '(js3-curly-indent-offset 2)
 )
-
+ 
 (autoload 'js3-mode "js3" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 ;; END js3 --
@@ -43,20 +47,16 @@
 
 ;; BEGIN php-mode
 (require 'php-mode)
+(setq default-tab-width 4)
+(setq indent-tabs-mode nil)
+(setq c-default-style "bsd") ; set code style bsd
+(setq-default c-basic-offset 4)
+(add-hook 'php-mode-user-hook 'turn-on-font-lock)
 ;; END php-mode
 
-;; do not use tab,instead of 4 space
-(setq tab-width 4)
-(setq c-basic-offset 4)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(indent-tabs-mode nil))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+;; BEGIN markdown-mode
+(autoload 'markdown-mode "markdown-mode.el"
+    "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+;; END markdown-mode

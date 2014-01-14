@@ -20,3 +20,5 @@
 (load "~/.emacs.d/config/switch-window-config.el")
 ;;加载auto-complete插件配置
 (load "~/.emacs.d/config/ac-config.el")
+;;加载web-mode插件配置
+(load "~/.emacs.d/config/web-mode-config.el")

@@ -24,3 +24,6 @@
   (interactive)
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
+
+;;打开ido
+(ido-mode t)

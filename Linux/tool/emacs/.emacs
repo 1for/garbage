@@ -18,7 +18,11 @@
 (load "~/.emacs.d/config/ace-jump-line-mode-config.el")
 ;;加载switch-window插件配置
 (load "~/.emacs.d/config/switch-window-config.el")
+;;加载yasnippet插件配置
+(load "~/.emacs.d/config/yasnippet-config.el")
 ;;加载auto-complete插件配置
 (load "~/.emacs.d/config/ac-config.el")
 ;;加载web-mode插件配置
 (load "~/.emacs.d/config/web-mode-config.el")
+;;加载minimap插件配置
+(load "~/.emacs.d/config/minimap-config.el")

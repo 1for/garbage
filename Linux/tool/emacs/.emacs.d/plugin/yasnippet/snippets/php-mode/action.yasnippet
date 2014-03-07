@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: action
+# --
+	public function action${1:ViewPage}()
+	{
+		try
+		{
+
+		}
+		catch(Exception $e)
+		{
+			SystemLog::log(FS_LOG_ERROR,$e->getMessage().";".$e->getFile()."; on line ".$e->getLine());
+            echo MessageExt::createErrorMessage($e->getMessage());
+		}
+	}

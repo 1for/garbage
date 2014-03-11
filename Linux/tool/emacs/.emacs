@@ -26,3 +26,5 @@
 (load "~/.emacs.d/config/web-mode-config.el")
 ;;加载minimap插件配置
 (load "~/.emacs.d/config/minimap-config.el")
+;;加载idle-highlight-mode
+(load "~/.emacs.d/config/idle-highlight-mode-config.el")

@@ -1,0 +1,9 @@
+* 文件I/O
+** 文件描述符
+STDIN_FILENO 0
+STDOUT_FILENO 1
+STDERR_FILENO 2
+文件描述符的变化范围是0~OPEN_MAX
+** I/O的效率
+
+

@@ -29,7 +29,6 @@
 | wchar.h    | 扩展的多字节和宽字节支持 |
 | wctype.h   | 宽字符分类和映射支持     |
 |------------+--------------------------|
-
 *** POSIX
 POSIX包含了以上ISO C的标准库，其他如下：
 1. POSIX标准定义的必须的头文件
@@ -102,9 +101,6 @@ POSIX包含了以上ISO C的标准库，其他如下：
 | stropts.h   | XSI STREAMS接口 |
 | trace.h     | 事件跟踪        |
 |-------------+-----------------|
-
-
-
 ** 限制
 1. 编译时限制（头文件）
 2. 不与文件和目录相关联的运行时限制（sysconf函数）
@@ -134,5 +130,55 @@ POSIX包含了以上ISO C的标准库，其他如下：
 | uid_t        | 用户ID                       |
 | wchar_t      | 能表示所有的字符码           |
 |--------------+------------------------------|
+** 文件I/O
+*** 文件描述符
+STDIN_FILENO 0
+STDOUT_FILENO 1
+STDERR_FILENO 2
+文件描述符的变化范围是0~OPEN_MAX
+*** I/O的效率
+TODO 预读技术
+*** 文件共享
+1. 每个进程在进程表中都有一个记录项，记录项中包含有一张打开文件描述符表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符相关联的是：
+   a) 文件描述符标志
+   b) 指向一个文件表项的指针
+2. 内核为所有打开文件维持一张文件表。每个文件表项包含：
+   a) 文件状态标志（读、写、添写、同步和非阻塞等）
+   b) 当前文件偏移量
+   c) 指向该文件v节点表项的指针
+3. 每个打开文件都有一个v节点结构
+*** 文件原子操作
+#include<unistd.h>
+ssize_t pread(int filedes, void *buf, size_t nbytes, off_t offset);
+ssize_t pwrite(int filedes, const void *buf, size_t nbytes, off_t offset);
+*** dup和dup2函数
+int dup(int filedes);
+int dup2(int filedes1,int filedes2);
+复制文件描述符，实际上两个文件描述符包含同样的文件表
+*** sync、fsync和fdatasync函数
+**** sync
+void sync(void) 
+将所有修改过的块缓冲区排入写队列
+系统守护进程会周期性地调用sync（每隔30s）
+**** fsync
+int fsync(int filedes)
+针对指定的文件描述符，等待写磁盘操作结束，然后返回
+同时更新文件的属性
+**** fdatasync
+int fdatasync(int filedes)
+与fsync的区别是它只影响文件的数据部分
+*** fcntl函数
+int fcntl(int filedes,int cmd, ... /* arg */)
+改变已打开文件的性质，包含5种功能：
+1. 复制一个现有的描述符(cmd=F_DUPFD)
+2. 获得/设置文件描述符标记(cmd=F_GETFD或F_SETFD)
+3. 获得/设置文件状态标志(cmd=F_GETFL或F_SETFL)
+4. 获得/设置异步I/O所有权(cmd=F_GETOWN或F_SETOWN)
+5. 获得/设置记录锁(cmd=F_GETLK、F_SETLK或F_SETLIKW)
+*** /dev/fd
+在shell下单独一个字符'-'解释为标准输入
+*** 习题
+6 如果使用添加标志打开文件读、写，读可以从任意位置读，但是写只能从最后开始写
+
 
 

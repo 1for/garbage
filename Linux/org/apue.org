@@ -183,6 +183,21 @@ int fcntl(int filedes,int cmd, ... /* arg */)
 
 
 * 文件和目录
+** stat函数
+struct stat{
+  mode_t st_mode;
+  ino_t  st_ino;
+  dev_t  st_dev;
+  dev_t  st_rdev;
+  nlink_t  st_nlink;
+  uid_t  st_uid;
+  gid_t  st_gid;
+  time_t st_atime;
+  time_t st_mtime;
+  time_t st_ctime;
+  blksize_t st_blksize;
+  blkcnt_t st_blocks;
+}
 ** 文件类型
 1 普通文件 /etc/passwd
 2 目录文件 /etc
@@ -212,8 +227,28 @@ int access(const char *pathname,int mode)
 mode_t umask(mode_t cmask);
 为进程设置文件模式创建屏蔽字，并返回以前的值
 ** 粘住位
-如果对一个目录设置了粘住位，则只有对该目录具有写权限的用户拥有此文件或这拥有此目录，或者是超级用户的时候才能删除或更名该目录下的文件
+   在交换区保存程序正文（若系统支持），限制在目录中删除和更名文件
+   如果对一个目录设置了粘住位，则只有对该目录具有写权限的用户拥有此文件或这拥有此目录，或者是超级用户的时候才能删除或更名该目录下的文件
 ** 文件截短
 int truncate(const char *pathname, off_t length);
 int ftruncate(int filedes. off_t length);
 ** 文件系统
+磁盘->分区->文件系统->柱面组->(i节点数组,目录块和数据块)
+不同文件系统维护各自的i节点号
+** link unlink remove rename
+int link(const char *existpath,const char *newpath);创建现有文件的链接，其实是创建一个新的目录项
+int unlink(const char *existpath);删除目录项，此时磁盘剩余空间会变大
+使用符号链接可能在文件系统中引入循环
+** 文件的时间
+| 字段     | 说明                  | 例子         | ls(1)选项 |
+|----------+-----------------------+--------------+-----------|
+| st_atime | 文件数据最后访问时间  | read         | -u        |
+| st_mtime | 文件数据最后修改时间  | write        | 默认      |
+| st_ctime | i节点状态最后修改时间 | chmod、chown | -c        |
+|----------+-----------------------+--------------+-----------|
+** 设备特殊文件
+每个文件系统所在的存储设备都由其主、此设备号表示
+主设备号标识设备驱动程序
+次设备号标识特定的子设备号
+
+

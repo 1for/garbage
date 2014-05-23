@@ -16,9 +16,7 @@
 	'("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;;隐藏菜单栏
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+(menu-bar-mode -1)
 
 ;;隐藏^M
 (defun remove-dos-eol ()

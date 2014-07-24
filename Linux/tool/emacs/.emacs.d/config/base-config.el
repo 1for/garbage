@@ -9,6 +9,7 @@
 (set-background-color "black")
 (set-cursor-color "gold")
 (set-mouse-color "gold")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/molokai")
 
 ;;emacs包管理
 (require 'package)

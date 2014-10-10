@@ -28,3 +28,6 @@
 
 ;;打开ido
 (ido-mode t)
+
+;;字体设置
+(set-default-font "-outline-Lucida Console-normal-normal-normal-mono-*-*-*-*-*-*-iso10646-1" 1)

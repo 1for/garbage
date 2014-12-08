@@ -30,6 +30,9 @@
 (load "~/.emacs.d/config/idle-highlight-mode-config.el")
 ;;加载dirtree插件配置
 (load "~/.emacs.d/config/dirtree-config.el")
+;;加载Nyan mode
+(load "~/.emacs.d/config/nyan-mode-config.el")
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

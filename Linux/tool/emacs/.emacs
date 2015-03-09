@@ -32,6 +32,8 @@
 (load "~/.emacs.d/config/dirtree-config.el")
 ;;加载Nyan mode
 (load "~/.emacs.d/config/nyan-mode-config.el")
+;;加载p4
+(load "~/.emacs.d/config/p4-config.el")
 
 
 (custom-set-variables

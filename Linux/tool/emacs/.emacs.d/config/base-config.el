@@ -5,10 +5,10 @@
 (setq inhibit-startup-message t)
 
 ;;set color theme
-(set-foreground-color "green")
-(set-background-color "black")
-(set-cursor-color "gold")
-(set-mouse-color "gold")
+;;(set-foreground-color "green")
+;;(set-background-color "black")
+;;(set-cursor-color "gold")
+;;(set-mouse-color "gold")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/molokai")
 
 ;;emacs包管理
@@ -31,3 +31,14 @@
 
 ;;字体设置
 (set-default-font "-outline-Lucida Console-normal-normal-normal-mono-*-*-*-*-*-*-iso10646-1" 1)
+
+;;设置光标
+(setq-default cursor-type 'bar)
+
+;;文件编码设置
+(prefer-coding-system 'utf-8)
+;;(setq file-name-coding-system 'gbk)  ;;仅window下启用
+(setq default-buffer-file-coding-system 'utf-8)
+
+;;默认选择molokai主题
+(load-theme 'molokai)

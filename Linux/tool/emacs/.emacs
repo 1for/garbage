@@ -34,13 +34,15 @@
 (load "~/.emacs.d/config/nyan-mode-config.el")
 ;;加载p4
 (load "~/.emacs.d/config/p4-config.el")
-
+;;加载smex
+(load "~/.emacs.d/config/smex-config.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("9fd20670758db15cc4d0b4442a74543888d2e445646b25f2755c65dcd6f1504b" default)))
  '(js3-curly-indent-offset 2)
  '(js3-expr-indent-offset 2)
  '(js3-lazy-commas t)
@@ -48,10 +50,11 @@
  '(js3-lazy-operators t)
  '(js3-paren-indent-offset 2)
  '(js3-square-indent-offset 2)
+ '(menu-bar-mode nil)
  '(truncate-partial-width-windows nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "YaHei Consolas Hybrid" :foundry "outline" :slant normal :weight normal :height 105 :width normal)))))

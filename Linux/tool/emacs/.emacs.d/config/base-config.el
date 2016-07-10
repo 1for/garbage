@@ -14,8 +14,9 @@
 ;;emacs包管理
 (require 'package)
 (add-to-list 'package-archives 
-	'("marmalade" . "http://marmalade-repo.org/packages/") t)
-
+			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+			 '("melpa" . "https://melpa.org/packages/") t)
 ;;隐藏菜单栏
 (menu-bar-mode -1)
 

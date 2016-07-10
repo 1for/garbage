@@ -1,4 +1,5 @@
-(add-to-list 'load-path "~/.emacs.d/")
+;; emacs 24.5 raise error
+;;(add-to-list 'load-path "~/.emacs.d/")
 
 ;;加载基本配置
 (load "~/.emacs.d/config/base-config.el")

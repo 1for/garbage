@@ -1,4 +1,3 @@
-;; emacs 24.5 raise error
 ;;(add-to-list 'load-path "~/.emacs.d/")
 
 ;;加载基本配置
@@ -37,13 +36,19 @@
 (load "~/.emacs.d/config/p4-config.el")
 ;;加载smex
 (load "~/.emacs.d/config/smex-config.el")
+(load "~/.emacs.d/config/recent-jump.el")
+(load "~/.emacs.d/config/projectile-conf.el")
+(load "~/.emacs.d/config/gotags-config.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("9fd20670758db15cc4d0b4442a74543888d2e445646b25f2755c65dcd6f1504b" default)))
+ '(custom-safe-themes
+   (quote
+    ("9fd20670758db15cc4d0b4442a74543888d2e445646b25f2755c65dcd6f1504b" default)))
+ '(indent-tabs-mode nil)
  '(js3-curly-indent-offset 2)
  '(js3-expr-indent-offset 2)
  '(js3-lazy-commas t)
@@ -51,8 +56,17 @@
  '(js3-lazy-operators t)
  '(js3-paren-indent-offset 2)
  '(js3-square-indent-offset 2)
+ '(me\.alpheus/gotags-tags-file "~/workspace/go/testprj/src/cdn_alarm/GOTAGS")
  '(menu-bar-mode nil)
- '(truncate-partial-width-windows nil))
+ '(projectile-project-root-files
+   (quote
+    (".projectile" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "rebar.config" "project.clj" "pom.xml" "build.sbt" "build.gradle" "Gemfile" "requirements.txt" "Makefile")))
+ '(truncate-partial-width-windows nil)
+ '(web-mode-code-indent-offset 4)
+ '(web-mode-css-indent-offset 4)
+ '(web-mode-markup-indent-offset 4)
+ '(web-mode-script-padding 4)
+ '(web-mode-style-padding 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

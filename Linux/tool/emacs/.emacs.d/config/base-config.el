@@ -9,14 +9,16 @@
 ;;(set-background-color "black")
 ;;(set-cursor-color "gold")
 ;;(set-mouse-color "gold")
+;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/molokai")
 
 ;;emacs包管理
 (require 'package)
 (add-to-list 'package-archives 
 			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-			 '("melpa" . "https://melpa.org/packages/") t)
+;;(add-to-list 'package-archives
+;;			 '("melpa" . "https://melpa.org/packages/") t)
+
 ;;隐藏菜单栏
 (menu-bar-mode -1)
 
@@ -38,8 +40,22 @@
 
 ;;文件编码设置
 (prefer-coding-system 'utf-8)
+(setq-default indent-tabs-mode  nil)
+
 ;;(setq file-name-coding-system 'gbk)  ;;仅window下启用
 (setq default-buffer-file-coding-system 'utf-8)
 
 ;;默认选择molokai主题
-(load-theme 'molokai)
+;;(load-theme 'molokai)
+
+;;自定义快捷键
+(global-set-key (kbd "<f2>")   'find-file-in-repository)
+(global-set-key (kbd "<f4>")   'projectile-find-file)
+(global-set-key (kbd "<f3>")   'projectile-grep)
+(global-set-key (kbd "<f6>")   'phpunit-current-class)
+
+;;hack
+(global-set-key (kbd ",")
+		#'(lambda ()
+		    (interactive)
+		    (insert ", ")))

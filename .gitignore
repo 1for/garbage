@@ -161,3 +161,14 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+#############
+## emacs
+#############
+ac-comphist.dat
+auto-save-list/
+abbrev_defs
+history
+eshell/
+ido.last
+smex-items

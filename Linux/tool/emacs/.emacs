@@ -39,6 +39,7 @@
 (load "~/.emacs.d/config/recent-jump.el")
 (load "~/.emacs.d/config/projectile-conf.el")
 (load "~/.emacs.d/config/gotags-config.el")
+(load "~/.emacs.d/config/gocode-config.el") // https://github.com/nsf/gocode
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

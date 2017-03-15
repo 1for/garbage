@@ -4,13 +4,12 @@
 ;;no start info
 (setq inhibit-startup-message t)
 
-;;set color theme
-;;(set-foreground-color "green")
-;;(set-background-color "black")
-;;(set-cursor-color "gold")
-;;(set-mouse-color "gold")
 ;; theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/molokai")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/moe")
+
+
+;;默认选择moe主题
+(load-theme 'moe-dark t)
 
 ;;emacs包管理
 (require 'package)
@@ -18,6 +17,8 @@
 			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;;(add-to-list 'package-archives
 ;;			 '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
 
 ;;隐藏菜单栏
 (menu-bar-mode -1)
@@ -33,7 +34,7 @@
 (ido-mode t)
 
 ;;字体设置
-(set-default-font "-outline-Lucida Console-normal-normal-normal-mono-*-*-*-*-*-*-iso10646-1" 1)
+;;(set-default-font "-outline-Lucida Console-normal-normal-normal-mono-*-*-*-*-*-*-iso10646-1" 1)
 
 ;;设置光标
 (setq-default cursor-type 'bar)
@@ -44,9 +45,6 @@
 
 ;;(setq file-name-coding-system 'gbk)  ;;仅window下启用
 (setq default-buffer-file-coding-system 'utf-8)
-
-;;默认选择molokai主题
-;;(load-theme 'molokai)
 
 ;;自定义快捷键
 (global-set-key (kbd "<f2>")   'find-file-in-repository)

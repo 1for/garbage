@@ -13,7 +13,8 @@
 ;;加载markdown-mode插件配置
 (load "~/.emacs.d/config/markdown-mode-config.el")
 ;;加载google-translate插件配置
-(load "~/.emacs.d/config/google-translate-config.el")
+;;(load "~/.emacs.d/config/google-translate-config.el")
+(load "~/.emacs.d/config/baidu-translate-config.el")
 ;;加载ace-jump-line-mode
 (load "~/.emacs.d/config/ace-jump-line-mode-config.el")
 ;;加载switch-window插件配置

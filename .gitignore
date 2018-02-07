@@ -170,6 +170,6 @@ auto-save-list/
 abbrev_defs
 history
 eshell/
-elpa/archives/
 ido.last
 smex-items
+elpa

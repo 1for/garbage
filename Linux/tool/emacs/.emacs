@@ -1,13 +1,21 @@
 ;;(add-to-list 'load-path "~/.emacs.d/")
 
 ;;加载基本配置
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (load "~/.emacs.d/config/base-config.el")
 ;;加载linum插件配置
 (load "~/.emacs.d/config/linum-config.el")
 ;;加载tabbar插件配置
 (load "~/.emacs.d/config/tabbar-config.el")
 ;;加载js3插件配置
-(load "~/.emacs.d/config/js3-config.el")
+;;(load "~/.emacs.d/config/js3-config.el")
+(load "~/.emacs.d/config/js2-config.el")
 ;;加载php-mode插件配置
 (load "~/.emacs.d/config/php-mode-config.el")
 ;;加载markdown-mode插件配置
@@ -47,16 +55,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(js3-curly-indent-offset 2)
- '(js3-expr-indent-offset 2)
- '(js3-lazy-commas t)
- '(js3-lazy-dots t)
- '(js3-lazy-operators t)
- '(js3-paren-indent-offset 2)
- '(js3-square-indent-offset 2)
+ '(package-selected-packages
+   (quote
+    (ac-js2 js2-mode magit flycheck solidity-mode yaml-mode request projectile project popup phpunit multi-web-mode go-mode find-file-in-repository find-file-in-project fill-column-indicator dsvn autothemer all-the-icons)))
  '(web-mode-code-indent-offset 4)
  '(web-mode-css-indent-offset 4)
  '(web-mode-markup-indent-offset 4)
  '(web-mode-script-padding 4)
  '(web-mode-style-padding 4))
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

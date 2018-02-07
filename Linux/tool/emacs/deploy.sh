@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cp -rf .* ~/
+cp -rf .emacs* ~/
 
-echo "cp -rf .* ~/ done."
+echo "cp -rf .emacs* ~/ done."

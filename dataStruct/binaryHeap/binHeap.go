@@ -5,6 +5,7 @@ import(
 	"fmt"
 )
 
+//二叉堆
 type BinHeap struct{
 	size int
 	queue []int

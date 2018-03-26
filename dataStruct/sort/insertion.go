@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package sort
 
 func InsertionSort( data []int) []int{
 	var i, j, tmp int
@@ -15,10 +13,8 @@ func InsertionSort( data []int) []int{
 		tmp = data[i]
 		for j=i; j>0 && data[j-1] > tmp; j-- {
 			data[j] = data[j-1]
-			fmt.Println("for2 j=", j, ", i=", i, ", data=", data);
 		}
 		data[j] = tmp
-		fmt.Println("j=", j, ", i=", i, ", data=", data);
 	}
 
 	return data

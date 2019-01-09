@@ -57,7 +57,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ac-js2 js2-mode magit flycheck solidity-mode yaml-mode request projectile project popup phpunit multi-web-mode go-mode find-file-in-repository find-file-in-project fill-column-indicator dsvn autothemer all-the-icons)))
+    (ac-js2 js2-mode magit flycheck solidity-mode yaml-mode request helm-projectile project popup phpunit multi-web-mode go-mode find-file-in-repository find-file-in-project fill-column-indicator dsvn autothemer all-the-icons)))
  '(web-mode-code-indent-offset 4)
  '(web-mode-css-indent-offset 4)
  '(web-mode-markup-indent-offset 4)

@@ -47,10 +47,11 @@
 (setq default-buffer-file-coding-system 'utf-8)
 
 ;;自定义快捷键
-(global-set-key (kbd "<f5>")   'find-file-in-repository)
-(global-set-key (kbd "<f6>")   'phpunit-current-class)
-(global-set-key (kbd "<f7>")   'projectile-find-file)
-(global-set-key (kbd "<f8>")   'projectile-grep)
+;;(global-set-key (kbd "<f5>")   'find-file-in-repository)
+;;(global-set-key (kbd "<f6>")   'phpunit-current-class)
+(global-set-key (kbd "<f7>")   'helm-projectile-find-file)
+(global-set-key (kbd "<f8>")   'helm-projectile-grep)
+
 
 
 ;;hack

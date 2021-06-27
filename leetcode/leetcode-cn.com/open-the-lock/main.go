@@ -3,8 +3,13 @@ package main
 import("fmt")
 
 func main(){
+	/*
 	deadends := []string{"0201","0101","0102","1212","2002"}
 	target := "0202"
+        */
+
+	deadends := []string{"0000"}
+	target := "8888"
 
 	ret := openLock(deadends, target)
 	fmt.Println(ret)
@@ -17,6 +22,10 @@ func openLock(deadends []string, target string) int {
 	dead := make(map[string]bool)
 	for _,v :=  range deadends{
 		dead[v] = true
+	}
+
+	if dead[start] {
+		return -1
 	}
 
 	if start == target {

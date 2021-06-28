@@ -6,9 +6,11 @@ import(
 )
 
 func main(){
-	routes := [][]int{{1,2,7},{3,6,7}}
-	source := 1
-	target := 6
+	//	[[7,12],[4,5,15],[6],[15,19],[9,12,13]]
+
+	routes := [][]int{{7,12}, {4,5,15}, {6}, {15,19}, {9,12,13}}
+	source := 15
+	target := 12
 
 	ret := numBusesToDestination(routes, source, target)
 	fmt.Println(ret)
@@ -30,7 +32,6 @@ func numBusesToDestination(routes [][]int, source, target int) int {
 	//初始化 exchange 完成
 
 	//记录站点所属的公交线路 rec[site] = [RouteIdx1,RouteIdx2]
-	
 	rec := make(map[int][]int)
 
 	//遍历公交线路
@@ -38,7 +39,7 @@ func numBusesToDestination(routes [][]int, source, target int) int {
 		//遍历单个线路里面的站点
 		for _,site := range route {
 			//遍历站点所属的线路
-			for routeIdxOfSite := range rec[site] {
+			for _,routeIdxOfSite := range rec[site] {
 				exchange[routeIdx][routeIdxOfSite] = true
 				exchange[routeIdxOfSite][routeIdx] = true
 			}
@@ -55,7 +56,7 @@ func numBusesToDestination(routes [][]int, source, target int) int {
 	
 	//设置广度优先搜索的起始队列
 	queue := []int{}
-	for routeIdx := range rec[source] {
+	for _, routeIdx := range rec[source] {
 		distance[routeIdx] = 1
 		queue = append(queue, routeIdx)
 	}

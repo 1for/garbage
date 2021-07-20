@@ -6,54 +6,37 @@ import(
 )
 
 func main(){
-	var nums = []int{3,9,6}
-	var k int = 2
+	var nums = []int{1,2,3,4}
+	var k int = 91710
 	ret := maxFrequency(nums, k)
 	fmt.Println(ret)
 }
 
-//排序 + 二分 https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/solution/1838-zui-gao-pin-yuan-su-de-pin-shu-shua-ub57/
+//排序 + 滑动窗口
 func maxFrequency(nums []int, k int) int {
 	sort.Ints(nums)
 
-	length := len(nums)
-	var ret = make([]int, length)
-	ret[0] = 1
-	
-	for r := 2; r < length; r++{
-		low := 0
-		high := r
+	total := 0
+	max := 1
 
-		for low <= high {
-			mid := (low+high)/2
-			need := 0
-
-			for i:= mid; i < r; i++ {
-				need = need + (nums[r] - nums[i])
-			}
-
-			if k > need {
-				high = mid - 1
-				ret[r] = r - mid + 1
-			}
-
-			if k == need {
-				ret[r] = r - mid + 1
+	for left,right := 0,0 ; right < len(nums); right++ {
+		total = total + nums[right]
+		
+		for left < right {
+			need := (right - left + 1) * nums[right] - total
+			if need > k {
+				total = total - nums[left]
+				left++
+			}else {
 				break
 			}
-
-			if k < need {
-				low = mid + 1
-			}
 		}
-	}
 
-	max := 0
-	for i := 0; i < length; i++ {
-		if ret[i] > max {
-			max = ret[i]
-		}
+		if (right - left + 1) > max {
+			max = right - left + 1
+		}		
 	}
+	
 
 	return max
 }

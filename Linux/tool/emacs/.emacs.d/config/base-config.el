@@ -13,11 +13,11 @@
 
 ;;emacs包管理
 (require 'package)
-(add-to-list 'package-archives 
-			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;;(add-to-list 'package-archives
-;;			 '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;;(add-to-list 'package-archives 
+;;			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+			 '("melpa" . "https://melpa.org/packages/") t)
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 ;;隐藏菜单栏
@@ -55,7 +55,8 @@
 
 
 ;;hack
-(global-set-key (kbd ",")
-		#'(lambda ()
-		    (interactive)
-		    (insert ", ")))
+;; auto insert space
+;;(global-set-key (kbd ",")
+;;		#'(lambda ()
+;;		    (interactive)
+;;		    (insert ", ")))

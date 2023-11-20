@@ -1,5 +1,10 @@
 ### 终端zsh
 先安装 zsh，oh-my-zsh
+```
+yum install zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 拷贝配置文件 .zshrc 到用户根目录
 
 ### tmux

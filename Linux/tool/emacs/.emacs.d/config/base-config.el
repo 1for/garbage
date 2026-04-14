@@ -21,7 +21,7 @@
 (package-initialize)
 
 ;;隐藏菜单栏
-(menu-bar-mode -1)
+;;(menu-bar-mode -1)
 
 ;;隐藏^M
 (defun remove-dos-eol ()
@@ -49,8 +49,12 @@
 ;;自定义快捷键
 ;;(global-set-key (kbd "<f5>")   'find-file-in-repository)
 ;;(global-set-key (kbd "<f6>")   'phpunit-current-class)
-(global-set-key (kbd "<f7>")   'helm-projectile-find-file)
-(global-set-key (kbd "<f8>")   'helm-projectile-grep)
+(global-set-key (kbd "C-c 7")   'helm-projectile-find-file)
+(global-set-key (kbd "C-c 8")   'helm-projectile-grep)
+;;代码回跳
+(global-set-key (kbd "C-c ,") 'pop-global-mark)
+;;查看调用
+(global-set-key (kbd "C-c .") 'lsp-find-references)
 
 
 

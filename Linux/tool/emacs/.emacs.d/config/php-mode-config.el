@@ -18,8 +18,8 @@
 ;;(setq php-manual-path "/home/liuyang/doc/php-manual/")
 ;; (global-set-key [(control tab)] 'php-complete-function)
 
-;;(use-package lsp-mode
-;; :config
-;; (setq lsp-prefer-flymake nil)
-;; :hook (php-mode . lsp)
-;; :commands lsp)
+(use-package lsp-mode
+ :config
+ (setq lsp-prefer-flymake nil)
+ :hook (php-mode . lsp)
+ :commands lsp)

@@ -1,3 +1,4 @@
 ;; elpa package projectile
-(eval-after-load 'projectile (lambda () (projectile-global-mode 1)))
-;;(add-hook 'after-init-hook (lambda () (projectile-global-mode 1)))
+(projectile-mode 1)
+(require 'helm-projectile)
+(helm-projectile-on)

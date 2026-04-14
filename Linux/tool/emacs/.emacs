@@ -8,7 +8,7 @@
 ;; You may delete these explanatory comments.
 (load "~/.emacs.d/config/base-config.el")
 ;;加载linum插件配置
-(load "~/.emacs.d/config/linum-config.el")
+;;(load "~/.emacs.d/config/linum-config.el")
 ;;加载tabbar插件配置
 ;;(load "~/.emacs.d/config/tabbar-config.el")
 ;;加载js3插件配置
@@ -34,7 +34,7 @@
 ;;加载idle-highlight-mode
 ;;(load "~/.emacs.d/config/idle-highlight-mode-config.el")
 ;;加载dirtree插件配置
-(load "~/.emacs.d/config/dirtree-config.el")
+;;(load "~/.emacs.d/config/dirtree-config.el")
 ;;加载Nyan mode
 ;;(load "~/.emacs.d/config/nyan-mode-config.el")
 ;;加载p4
@@ -51,14 +51,18 @@
 
 ;;加载php-mode插件配置
 (load "~/.emacs.d/config/php-mode-config.el")
+;;开发自定义配置
+(load "~/.emacs.d/config/dev.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(grep-find-ignored-directories
+   '("SCCS" "RCS" "CVS" "MCVS" ".src" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "vendor" "storage"))
  '(package-selected-packages
-   '(company lsp-ui lsp-mode ac-js2 js2-mode magit flycheck solidity-mode yaml-mode request helm-projectile project popup phpunit multi-web-mode go-mode find-file-in-repository find-file-in-project fill-column-indicator dsvn autothemer all-the-icons))
+   '(neotree company lsp-ui lsp-mode ac-js2 js2-mode magit flycheck solidity-mode yaml-mode request helm-projectile project popup phpunit multi-web-mode go-mode find-file-in-repository find-file-in-project fill-column-indicator dsvn autothemer all-the-icons))
  '(web-mode-code-indent-offset 4)
  '(web-mode-css-indent-offset 4)
  '(web-mode-markup-indent-offset 4)
@@ -70,4 +74,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#303030" :foreground "#c6c6c6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 180 :width normal :foundry "nil" :family "Menlo")))))
+;; neotree 文件树
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(setq neo-show-hidden-files t)
+(add-hook 'emacs-startup-hook (lambda () (neotree-dir default-directory)))
